@@ -60,3 +60,5 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = "/static/"
+
+FTPSERVER_FILE_STORAGE = "S3Boto3Storage"

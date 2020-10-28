@@ -1,6 +1,6 @@
 # flake8: noqa
-from django.db import models, migrations
 from django.conf import settings
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):

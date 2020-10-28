@@ -1,3 +1,5 @@
 Sphinx
 Django
 pyftpdlib
+django-storages
+boto3

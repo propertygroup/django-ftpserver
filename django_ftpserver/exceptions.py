@@ -1,0 +1,2 @@
+class CachedStorageExceptions(Exception):
+    pass

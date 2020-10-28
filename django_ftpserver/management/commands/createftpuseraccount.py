@@ -18,12 +18,10 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument("username", type=non_existent_user_account)
         parser.add_argument("group")
-        parser.add_argument("home_dir")
 
     def handle(self, *args, **options):
         username = options.get("username")
         group_name = options.get("group")
-        home_dir = options.get("home_dir")
 
         User = get_user_model()
         try:
@@ -41,7 +39,7 @@ class Command(BaseCommand):
             )
 
         account = models.FTPUserAccount.objects.create(
-            user=user, group=group, home_dir=home_dir
+            user=user, group=group, home_dir=f"/home/{username}"
         )
 
         self.stdout.write(

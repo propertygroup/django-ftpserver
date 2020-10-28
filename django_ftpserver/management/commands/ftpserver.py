@@ -1,17 +1,16 @@
-import sys
 import os
+import sys
 
 import pyftpdlib
-from pyftpdlib import handlers
-from pyftpdlib.servers import FTPServer
-
 from django import get_version
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
+from pyftpdlib import handlers
+from pyftpdlib.servers import FTPServer
 
+from django_ftpserver import utils
 from django_ftpserver.authorizers import FTPAccountAuthorizer
 from django_ftpserver.daemonize import become_daemon
-from django_ftpserver import utils
 
 
 class Command(BaseCommand):
