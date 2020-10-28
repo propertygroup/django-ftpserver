@@ -79,3 +79,29 @@ class FTPUserAccount(models.Model):
     class Meta:
         verbose_name = _("FTP user account")
         verbose_name_plural = _("FTP user accounts")
+
+
+class FTPFileInfo(models.Model):
+    parent = models.ForeignKey(
+        "self",
+        verbose_name=_("Parent"),
+        blank=True,
+        null=True,
+        related_name="children",
+        on_delete=models.PROTECT,
+    )
+    is_dir = models.BooleanField(verbose_name=_("Is directory?"))
+    permission = models.CharField(
+        verbose_name=_("Permission to directory/files"), max_length=255
+    )
+    links_number = models.IntegerField(verbose_name=_("Links number"), default=1)
+    size = models.IntegerField(verbose_name=_("Size [B]"))
+    mtime = models.IntegerField(verbose_name=_("Last modification date"))
+    name = models.CharField(verbose_name=_("Name"), max_length=255)
+
+    class Meta:
+        verbose_name = _("FTP file info")
+        verbose_name_plural = _("FTP files info")
+
+    def __str__(self):
+        return f"{self.name}{'/' if self.is_dir else ''}"

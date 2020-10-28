@@ -15,7 +15,6 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser) -> None:
         parser.add_argument("name", type=non_existent_user_group)
-        parser.add_argument("home_dir")
 
         parser.add_argument(
             "--permission",
@@ -26,9 +25,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         name = options.get("name")
-        home_dir = options.get("home_dir")
 
-        group = models.FTPUserGroup(name=name, home_dir=home_dir)
+        group = models.FTPUserGroup(name=name, home_dir=f"/home/{name}")
         if options["permission"]:
             group.permission = options["permission"]
         group.save()
