@@ -14,28 +14,33 @@ def read(filename):
 
 
 setup(
-    name='django-ftpserver',
-    version='0.7.0',
+    name="django-ftpserver",
+    version="0.7.0",
     description="FTP server application for Django.",
-    long_description=read('README.rst'),
+    long_description=read("README.rst"),
     packages=find_packages(),
-    author='Shinya Okano',
-    author_email='tokibito@gmail.com',
-    url='https://github.com/tokibito/django-ftpserver',
-    install_requires=['Django>=2.0', 'pyftpdlib'],
+    author="Shinya Okano",
+    author_email="tokibito@gmail.com",
+    url="https://github.com/tokibito/django-ftpserver",
+    install_requires=["Django>=2.0", "pyftpdlib"],
     extras_require={
-        'develop': [
-            'pytest', 'flake8', 'pytest-django',
-            'pytest-pythonpath', 'tox', 'wheel',
+        "develop": [
+            "pytest",
+            "flake8",
+            "pytest-django",
+            "pytest-pythonpath",
+            "tox",
+            "wheel",
         ],
     },
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
-        'Framework :: Django',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'License :: OSI Approved :: MIT License',
-    ])
+        "Development Status :: 5 - Production/Stable",
+        "Framework :: Django",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "License :: OSI Approved :: MIT License",
+    ],
+)
